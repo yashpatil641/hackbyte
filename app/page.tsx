@@ -1,32 +1,32 @@
-import Image from "next/image"
-import stats from "@/public/HomePageLogo/redtape2.png"
+import Image from "next/image";
+import stats from "@/public/HomePageLogo/redtape2.png";
 // import HeroSection from "@/components/Herosection"
-import DiscordCard from "@/components/DiscordCard"
-import whyParticipate from "@/public/HomePageLogo/whyParticipate.png"
-import g1 from "@/public/HomePageLogo/g1.svg"
-import g2 from "@/public/HomePageLogo/g2.svg"
-import g3 from "@/public/HomePageLogo/g3.svg"
-import g4 from "@/public/HomePageLogo/g4.svg"
-import g5 from "@/public/HomePageLogo/g5.svg"
-import g6 from "@/public/HomePageLogo/g6.svg"
-import g7 from "@/public/HomePageLogo/g7.svg"
-import g8 from "@/public/HomePageLogo/g8.svg"
-import g9 from "@/public/HomePageLogo/g9.svg"
-import g10 from "@/public/HomePageLogo/g10.svg"
-import bottomstats from "@/public/upper.svg"
-import topstats from "@/public/lower.svg"
-import * as motion from "motion/react-client"
-import AnimatedTitle from "@/components/AnimatedTitle"
-import CountAnimation from "@/components/CountAnimation"
-import Link from "next/link"
-import HB4Form from "@/components/HB4Form"
-import hackbyte4logo from "@/public/HB4Logo.svg"
+import DiscordCard from "@/components/DiscordCard";
+import whyParticipate from "@/public/HomePageLogo/whyParticipate.png";
+import g1 from "@/public/HomePageLogo/g1.svg";
+import g2 from "@/public/HomePageLogo/g2.svg";
+import g3 from "@/public/HomePageLogo/g3.svg";
+import g4 from "@/public/HomePageLogo/g4.svg";
+import g5 from "@/public/HomePageLogo/g5.svg";
+import g6 from "@/public/HomePageLogo/g6.svg";
+import g7 from "@/public/HomePageLogo/g7.svg";
+import g8 from "@/public/HomePageLogo/g8.svg";
+import g9 from "@/public/HomePageLogo/g9.svg";
+import g10 from "@/public/HomePageLogo/g10.svg";
+import bottomstats from "@/public/upper.svg";
+import topstats from "@/public/lower.svg";
+import * as motion from "motion/react-client";
+import AnimatedTitle from "@/components/AnimatedTitle";
+import CountAnimation from "@/components/CountAnimation";
+import Link from "next/link";
+import HB4Form from "@/components/HB4Form";
+import hackbyte4logo from "@/public/HB4Logo.svg";
 
 interface GuidlinesCard {
-  title: string
-  description: string
-  icon: string
-  index: number
+  title: string;
+  description: string;
+  icon: string;
+  index: number;
 }
 
 function GuidelinesCard({ title, description, icon, index }: GuidlinesCard) {
@@ -34,7 +34,7 @@ function GuidelinesCard({ title, description, icon, index }: GuidlinesCard) {
   const animationVariants = {
     hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
     visible: { opacity: 1, x: 0 },
-  }
+  };
 
   return (
     <motion.div
@@ -55,7 +55,7 @@ function GuidelinesCard({ title, description, icon, index }: GuidlinesCard) {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
 export default function Home() {
@@ -112,7 +112,7 @@ export default function Home() {
       description:
         "IIITDM Jabalpur awaits—explore the campus and bring ideas to life.",
     },
-  ]
+  ];
 
   return (
     <div className="overflow-hidden">
@@ -172,9 +172,54 @@ export default function Home() {
           <HB4Form />
         </div>
       </div>
-      <div className="sm:hidden w-screen mt-28">
-        <Image src={bottomstats} alt="bottomstats" className="w-screen" />
-        <Image src={topstats} alt="topstats" className="w-screen" />
+      <div className="sm:hidden w-screen mt-28 flex flex-col gap-52 mb-14">
+        <div className="relative">
+          <Image
+            src={stats}
+            alt="bottomstats"
+            className="w-screen scale-[2.6] xs:scale-[1.8]"
+          />
+          <div className="w-full flex justify-evenly absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-6 ">
+            <div className="w-[40%] text-center flex flex-col items-center mb-4 scale-150">
+              <CountAnimation targetValue={5154} />
+              <div className="font-bold text-sm text-white">Registrations</div>
+              <div className="font-bold text-xs text-[#FFC1C7] max-w-[70%]">
+                5100+ registrations from across the country.
+              </div>
+            </div>
+            <div className="w-[40%] text-center flex flex-col items-center mb-4 scale-150">
+              <CountAnimation targetValue={425} />
+              <div className="font-bold text-sm text-white">Participants</div>
+              <div className="font-bold text-xs text-[#FFC1C7] max-w-[70%]">
+                400+ participants joined the offline hackathon!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <Image
+            src={stats}
+            alt="bottomstats"
+            className="w-screen scale-[2.6] xs:scale-[1.8] -rotate-12"
+          />
+          <div className="w-full flex flex-wrap justify-evenly absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-6">
+            <div className="w-[40%] text-center flex flex-col items-center mb-4 scale-150">
+              <CountAnimation targetValue={100} />
+              <div className="font-bold text-sm text-white">Volunteers</div>
+              <div className="font-bold text-xs text-[#FFC1C7] max-w-[70%]">
+                To help you, get the best out of HackByte.
+              </div>
+            </div>
+            <div className="w-[40%] text-center flex flex-col items-center mb-4 scale-150">
+              <CountAnimation targetValue={105} />
+              <div className="font-bold text-sm text-white">Projects</div>
+              <div className="font-bold text-xs text-[#FFC1C7] max-w-[70%]">
+                Innovative submissions from various domains.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="relative sm:mt-0 mt-28 sm:block hidden">
         <Image
@@ -221,7 +266,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Why Participate */}
       <div className="flex flex-col items-center gap-4 md:gap-16 md:py-28 py-16">
         <div className=" text-supporting-lightGray lg:text-5xl monitor:text-7xl xl:text-6xl md:text-4xl sm:text-2xl text-3xl xs:text-4xl font-bold leading-[48px] xs:leading-[64px] text-center">
@@ -237,7 +281,6 @@ export default function Home() {
           />
         </AnimatedTitle>
       </div>
-
       {/* Guidelines */}
       <div className="flex flex-col items-center gap-4 md:gap-16">
         <div className=" text-supporting-lightGray lg:text-5xl monitor:text-7xl xl:text-6xl md:text-4xl text-center text-3xl xs:text-2xl font-bold leading-[48px] xs:leading-[64px]">
@@ -286,7 +329,6 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-
       <div className="flex flex-col items-center gap-4 md:gap-16 pt-4 lg:pt-8 xl:pb-12 pb-8 md:pb-16 mt-8 md:my-20 xl:my-32">
         <div className=" text-supporting-lightGray lg:text-5xl monitor:text-7xl xl:text-6xl md:text-4xl text-2xl font-bold pb-4 md:pb-8 lg:pb-16 text-center">
           <AnimatedTitle viewport={true}>
@@ -296,5 +338,5 @@ export default function Home() {
         <DiscordCard />
       </div>
     </div>
-  )
+  );
 }
